@@ -1,7 +1,10 @@
 NkuRails::Application.routes.draw do
-   resources :posts
+  get "welcome/index"
+  
+  resources :posts
+    root to: "welcome#index"
+
  
-  root  to:"welcome#index"
 #end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
