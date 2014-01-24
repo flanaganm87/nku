@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def new
     @post = Post.new
   end
@@ -16,6 +17,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+  
+   http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+ 
   
   def index
     @posts = Post.all
